@@ -6,7 +6,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm install
+
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-          working-directory: package-lock.json
+          # Isso impede que a action tente buscar o lockfile sozinha
+          install: false
