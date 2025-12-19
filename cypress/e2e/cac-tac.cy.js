@@ -199,7 +199,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
   })
 
     //exercício extra 2 - Módulo 12
-  it("exibe e oculta as mensagens de sucesso e erro usando .invoke()", () => {
+  it.only("exibe e oculta as mensagens de sucesso e erro usando .invoke()", () => {
     cy.get('.success')
       .should('not.be.visible')
       .invoke('show')
